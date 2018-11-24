@@ -1,21 +1,27 @@
 .NavButton {
   width: 3rem;
   height: 3rem;
-  border-radius: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
   font-size: 2rem;
-  background-color: #495261;
   box-shadow:  0px 9px 19px -5px rgba(0,0,0,0.50);
+  background-color: inherit;
+  outline: none;
+  overflow: hidden;  
 }
 
 .NavButton__button {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  outline: none;
+  background-color: #495261;
+  border: none;
 }
 
 .NavButton__arrow-image {
