@@ -1,4 +1,4 @@
-@import '../../../styleConstants.scss';
+@import '../../../../../styleConstants.scss';
 
 .GetStartedButton {
   width: $width-medium;
@@ -7,7 +7,7 @@
   background-color: $teal;
   border-radius: $border-radius;
   width: 50%;
-  height: 6rem;
+  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;

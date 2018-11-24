@@ -8,7 +8,6 @@ import FeelingPicker from './components/FeelingPicker';
 import Welcome from './components/Welcome';
 import SceneNav from './components/SceneNav';
 import TextInput from './components/TextInput';
-import GetStartedButton from './components/GetStartedButton';
 
 const SCENES_COUNT = 6;
 const feelingPickerTitle = 'Here are some emotions. Select up to 3 that describe what you are feeling.';
@@ -100,7 +99,9 @@ class App extends Component {
   renderContent = (scene) => {
     if (scene === 1) {
       return (
-        <Welcome />
+        <Welcome 
+          navigatePage={this.navigatePage}
+        />
       )
     }
     if (scene === 2) {
@@ -155,17 +156,12 @@ class App extends Component {
       <div className="App">
         {this.renderContent(scene)}
         {
-          this.state.scene === 1
-            ? (
-              <GetStartedButton 
-                navigatePage={this.navigatePage}
-              />
-            ) : (
-              <SceneNav
-                scene={scene}
-                navigatePage={this.navigatePage}
-              />
-            )
+          this.state.scene !== 1 && (
+            <SceneNav
+              scene={scene}
+              navigatePage={this.navigatePage}
+            />
+          )
         }
       </div>
     );
