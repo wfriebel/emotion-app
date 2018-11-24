@@ -9,11 +9,12 @@ import Welcome from './components/Welcome';
 import SceneNav from './components/SceneNav';
 import TextInput from './components/TextInput';
 
-const SCENES_COUNT = 6;
+const SCENES_COUNT = 9;
 const feelingPickerTitle = 'Here are some emotions. Select up to 3 that describe what you are feeling.';
 
 const INITIAL_STATE = {
   scene: 1,
+  phase: 1,
   generalFeelings: GENERAL_FEELINGS,
   specificFeelings: [],
   situation: SITUATION,
@@ -96,6 +97,27 @@ class App extends Component {
     }))
   }
 
+  setPhase = phase => {
+    this.setState(() => ({ phase }));
+  }
+
+  updateBackgroundColor = () => {
+    if (this.state.scene === 6 && this.state.phase !== 1) {
+      this.setPhase(1);
+    } else if (this.state.scene === 7 && this.state.phase !== 2) {
+      this.setPhase(2);
+    } else if (this.state.scene === 8 && this.state.phase !== 2) {
+      this.setPhase(2);
+    }
+    else if (this.state.scene === 9 && this.state.phase !== 3) {
+      this.setPhase(3);
+    }
+  }
+
+  componentDidUpdate() {
+    this.updateBackgroundColor();
+  }
+
   renderContent = (scene) => {
     if (scene === 1) {
       return (
@@ -148,12 +170,39 @@ class App extends Component {
         />
       )
     }
+
+    if (scene === 7) {
+      return (
+        <TextInput 
+          questions={selectQuestions(this.state.questions, 5)}
+          updateQuestion={this.updateQuestion}
+        />
+      )
+    }
+
+    if (scene === 8) {
+      return (
+        <TextInput 
+          questions={selectQuestions(this.state.questions, 6)}
+          updateQuestion={this.updateQuestion}
+        />
+      )
+    }
+
+    if (scene === 9) {
+      return (
+        <TextInput 
+          questions={selectQuestions(this.state.questions, 7)}
+          updateQuestion={this.updateQuestion}
+        />
+      )
+    }
   }
 
   render() {
     const scene = this.state.scene;
     return (
-      <div className="App">
+      <div className={`App phase-${this.state.phase}`}>
         {this.renderContent(scene)}
         {
           this.state.scene !== 1 && (

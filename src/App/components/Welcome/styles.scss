@@ -4,20 +4,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
-.Welcome__title-container {
-  margin-bottom: 1rem;
-}
-
-.Welcome__title {
-  margin: 0;
-  margin-bottom: 5%;
-  font-size: 4.5rem;
-  font-weight: normal;
-}
-
-.Welcome__sub-title {
-  font-weight: normal;
+.Welcome__logo{
+  width: 15rem;
+  margin: 7rem 0 2rem 0;
 }

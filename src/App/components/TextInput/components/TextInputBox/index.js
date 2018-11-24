@@ -1,26 +1,10 @@
 import React, { Component } from 'react';
 import './styles.scss';
 
-const debounce = (func, delay) => {
-  let inDebounce;
-  return function() {
-    inDebounce = setTimeout(() => {
-      clearTimeout(inDebounce);
-      func.apply(this, arguments);
-    }, delay);
-  }
-}
-
 export default class TextInputBox extends Component {
   handleChange = e => {
-    this.delayedUpdateQuestion(e.target.value);
+    this.props.updateQuestion(this.props.question.id, e.target.value);
   }
-
-  updateQuestion = value => {
-    this.props.updateQuestion(this.props.question.id, value);
-  }
-
-  delayedUpdateQuestion = debounce(this.updateQuestion, 2000);
 
   render() {
     return (
