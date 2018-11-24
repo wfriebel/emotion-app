@@ -1,0 +1,12 @@
+@import '../../../styleConstants.scss';
+
+.SceneNav {
+  width: $width-medium;
+  margin-bottom: $scene-vertical-margin;
+  display: flex;
+  justify-content: space-between;
+}
+
+.SceneNav--right-only {
+  justify-content: flex-end;
+}

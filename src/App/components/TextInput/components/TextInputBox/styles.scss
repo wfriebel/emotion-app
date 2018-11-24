@@ -1,0 +1,40 @@
+@import '../../.././../../styleConstants.scss';
+
+.TextInputBox {
+  width: 100%;
+}
+
+.TextInputBox__prompt {
+  font-size: 1rem;
+  font-weight: normal;
+  color: $light-grey;
+  line-height: 23px;
+}
+
+.TextInputBox__response {
+  width: 80%;
+  padding:$margin-small;
+  line-height: 23px;
+  background-color: #FFFBFA;
+  border-radius: $border-radius;
+  outline: none;
+  border: none;
+  resize: none;
+  box-shadow: 0px 6px 28px 0px rgba(0,0,0,0.45);
+}
+
+.TextInputBox__response::placeholder {
+  color: $very-light-grey;
+}
+
+.TextInputBox__response.size-1 {
+  height: 27rem;
+}
+
+.TextInputBox__response.size-2 {
+  height: 10rem; 
+}
+
+.TextInputBox__response.size-3 {
+  height: 5.5rem;
+}

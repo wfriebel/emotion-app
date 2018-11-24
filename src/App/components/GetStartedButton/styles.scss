@@ -1,0 +1,20 @@
+@import '../../../styleConstants.scss';
+
+.GetStartedButton {
+  width: $width-medium;
+  margin-bottom: 22rem;
+  font-size: 1.5rem;
+  background-color: $teal;
+  border-radius: $border-radius;
+  width: 50%;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.GetStartedButton__button {
+  color: $button-grey;
+  width: 100%;
+  height: 100%;
+}
