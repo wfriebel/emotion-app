@@ -22,6 +22,8 @@
   outline: none;
   background-color: #495261;
   border: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .NavButton__arrow-image {
