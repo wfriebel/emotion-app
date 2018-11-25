@@ -8,6 +8,7 @@ export default class Welcome extends Component {
     return (
       <div className="Welcome">
         <img className="Welcome__logo" src={Logo} alt="Keepin it Feel"/>
+        <p className="Welcome__subtitle">This reflection exercise is for understanding your emotions and how you react in different situations. As you answer the questions, our hope is that you gain a better understanding of your emotions in response to the world around you. This exercise works best if you’re currently experiencing the emotions or have recently experienced them.</p>
         <GetStartedButton 
           navigatePage={this.props.navigatePage}
         />
