@@ -88,6 +88,16 @@ class App extends Component {
     this.updateBackgroundColor();
   }
 
+  componentDidMount() {
+    const windowHeight = window.innerHeight;
+    const bodyHeight = document.body.clientHeight;
+    const isSafari = bodyHeight > windowHeight;
+    this.setState(() => ({ isSafari }));
+    if (isSafari) {
+      document.body.style.height = '90vh';
+    }
+  }
+
   renderContent = (scene) => {
     if (scene === 1) {
       return (
@@ -214,16 +224,11 @@ class App extends Component {
       )
     }
   }
-
-  initialScreenSize = window.innerHeight;
   
   render() {
     const scene = this.state.scene;
-    const windowHeight = window.innerHeight;
-    const bodyHeight = document.body.clientHeight;
-    const isKeyboard = windowHeight < this.initialScreenSize;
     return (
-      <div className={`App phase-${this.state.phase} ${bodyHeight > windowHeight && !isKeyboard ? 'safari' : ''}`}>
+      <div className={`App phase-${this.state.phase} ${this.state.isSafari ? 'safari' : ''}`}>
         {this.renderContent(scene)}
         {
           scene !== 1 && (
