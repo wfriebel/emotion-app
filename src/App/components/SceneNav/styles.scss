@@ -1,13 +1,17 @@
 @import '../../../styleConstants.scss';
 
-.SceneNav {
+.SceneNav-container {
   width: $width-medium;
+}
+
+.SceneNav {
+  width: 100%;
   margin-bottom: $scene-vertical-margin;
   display: flex;
   justify-content: space-between;
 }
 
-.SceneNav--right-only {
+.SceneNav--forwards-only {
   justify-content: flex-end;
 }
 

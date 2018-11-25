@@ -25,6 +25,20 @@ class App extends Component {
  
   state = INITIAL_STATE;
 
+  componentDidMount() {
+    const windowHeight = window.innerHeight;
+    const bodyHeight = document.body.clientHeight;
+    const isSafari = bodyHeight > windowHeight;
+    this.setState(() => ({ isSafari }));
+    if (isSafari) {
+      document.body.style.height = '90vh';
+    }
+  }
+
+  componentDidUpdate() {
+    this.updateBackgroundColor();
+  }
+
   toggleSelectedFeeling = (feelingId) => {
     this.setState(prevState => ({
       feelings: prevState.feelings.map(feeling => {
@@ -84,18 +98,8 @@ class App extends Component {
     }
   }
 
-  componentDidUpdate() {
-    this.updateBackgroundColor();
-  }
-
-  componentDidMount() {
-    const windowHeight = window.innerHeight;
-    const bodyHeight = document.body.clientHeight;
-    const isSafari = bodyHeight > windowHeight;
-    this.setState(() => ({ isSafari }));
-    if (isSafari) {
-      document.body.style.height = '90vh';
-    }
+  startOver = () => {
+    this.setState(() => ({ ...INITIAL_STATE }))
   }
 
   renderContent = (scene) => {
@@ -237,6 +241,7 @@ class App extends Component {
               navigatePage={this.navigatePage}
               onlyBack={scene === SCENES_COUNT || scene === SCENES_COUNT - 1}
               lastScene={scene === SCENES_COUNT}
+              startOver={this.startOver}
             />
           )
         }
