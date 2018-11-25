@@ -1,0 +1,24 @@
+@import '../../../styleConstants.scss';
+
+.PhaseTitlePage {
+  width: $scene-width;
+  height: $scene-height;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.PhaseTitlePage__title {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-weight: normal;
+  font-size: 4rem;
+}
+
+.PhaseTitlePage__subtitle {
+  margin: 0;
+  margin-bottom: 5rem;
+  font-weight: normal;
+  font-size: 2rem;
+}

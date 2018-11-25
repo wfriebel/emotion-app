@@ -8,8 +8,9 @@ import FeelingPicker from './components/FeelingPicker';
 import Welcome from './components/Welcome';
 import SceneNav from './components/SceneNav';
 import TextInput from './components/TextInput';
+import PhaseTitlePage from './components/PhaseTitlePage';
 
-const SCENES_COUNT = 9;
+const SCENES_COUNT = 12;
 const feelingPickerTitle = 'Here are some emotions. Select up to 3 that describe what you are feeling.';
 
 const INITIAL_STATE = {
@@ -102,14 +103,14 @@ class App extends Component {
   }
 
   updateBackgroundColor = () => {
-    if (this.state.scene === 6 && this.state.phase !== 1) {
+    if (this.state.scene === 7 && this.state.phase !== 1) {
       this.setPhase(1);
-    } else if (this.state.scene === 7 && this.state.phase !== 2) {
-      this.setPhase(2);
     } else if (this.state.scene === 8 && this.state.phase !== 2) {
       this.setPhase(2);
+    } else if (this.state.scene === 10 && this.state.phase !== 2) {
+      this.setPhase(2);
     }
-    else if (this.state.scene === 9 && this.state.phase !== 3) {
+    else if (this.state.scene === 11 && this.state.phase !== 3) {
       this.setPhase(3);
     }
   }
@@ -126,7 +127,17 @@ class App extends Component {
         />
       )
     }
+
     if (scene === 2) {
+      return (
+        <PhaseTitlePage
+          phase={1}
+          subtitle="Identify"
+        />
+      )
+    }
+
+    if (scene === 3) {
       return (
         <FeelingPicker 
           title={feelingPickerTitle}
@@ -135,7 +146,7 @@ class App extends Component {
         />
       )
     }
-    if (scene === 3) {
+    if (scene === 4) {
       return (
         <TextInput 
           questions={selectQuestions(this.state.questions, 1)}
@@ -144,7 +155,7 @@ class App extends Component {
       )
     }
 
-    if (scene === 4) {
+    if (scene === 5) {
       return (
         <TextInput 
           questions={selectQuestions(this.state.questions, 2)}
@@ -153,7 +164,7 @@ class App extends Component {
       )
     }
 
-    if (scene === 5) {
+    if (scene === 6) {
       return (
         <TextInput 
           questions={selectQuestions(this.state.questions, 3)}
@@ -162,7 +173,7 @@ class App extends Component {
       )
     }
 
-    if (scene === 6) {
+    if (scene === 7) {
       return (
         <TextInput 
           questions={selectQuestions(this.state.questions, 4)}
@@ -171,7 +182,16 @@ class App extends Component {
       )
     }
 
-    if (scene === 7) {
+    if (scene === 8) {
+      return (
+        <PhaseTitlePage
+          phase={2}
+          subtitle="Re-frame"
+        />
+      )
+    }
+
+    if (scene === 9) {
       return (
         <TextInput 
           questions={selectQuestions(this.state.questions, 5)}
@@ -180,7 +200,7 @@ class App extends Component {
       )
     }
 
-    if (scene === 8) {
+    if (scene === 10) {
       return (
         <TextInput 
           questions={selectQuestions(this.state.questions, 6)}
@@ -189,7 +209,16 @@ class App extends Component {
       )
     }
 
-    if (scene === 9) {
+    if (scene === 11) {
+      return (
+        <PhaseTitlePage
+          phase={3}
+          subtitle="Resolve"
+        />
+      )
+    }
+
+    if (scene === 12) {
       return (
         <TextInput 
           questions={selectQuestions(this.state.questions, 7)}
