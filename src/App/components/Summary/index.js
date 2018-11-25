@@ -14,7 +14,7 @@ export default class Summary extends Component {
         <p className="Summary_paragraph">{this.props.questions[4].response}</p>
         <h2 className="Summary__subtitle">The reaction of others:</h2>
         <p className="Summary_paragraph">{this.props.questions[10].response}</p>
-        <h2 className="Summary__subtitle">You assume:</h2>
+        <h2 className="Summary__subtitle">Your assumptions:</h2>
         <p className="Summary_paragraph">{this.props.questions[11].response}</p>
         <h2 className="Summary__subtitle">How you feel:</h2>
         <SelectedFeelings
@@ -25,7 +25,7 @@ export default class Summary extends Component {
         <h2 className="Summary__subtitle">Why you feel this way:</h2>
         <p className="Summary_paragraph">{this.props.questions[2].response}</p>
         <p className="Summary_paragraph">{this.props.questions[6].response}</p>
-        <h2 className="Summary__subtitle">Your advice to yourself</h2>
+        <h2 className="Summary__subtitle">Your advice to yourself:</h2>
         <p className="Summary_paragraph">{this.props.questions[8].response}</p>
         <p className="Summary_paragraph">{this.props.questions[9].response}</p>
         <h2 className="Summary__subtitle">What you will do now:</h2>

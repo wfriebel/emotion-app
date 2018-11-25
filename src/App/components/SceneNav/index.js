@@ -25,6 +25,13 @@ export default class SceneNav extends Component {
             />
           )
         }
+        {
+          this.props.lastScene && (
+            <div className="SceneNav__contact">
+              Thanks for trying out our reflection exercise! If you have any thoughts or suggestions please send us an email at keepinitfeel@gmail.com.
+            </div>
+          )
+        }
       </div>
     )
   }

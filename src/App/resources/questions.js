@@ -77,7 +77,7 @@ export const QUESTIONS = [
     id: uuid(),
     prompt: 'If a friend had the same problem, what advice would you give them?',
     response: "",
-    placeholder: "I would probably tell them to setup a meeting with their manager to ask more questions to better understand the situation. I would tell them that if they were getting positive feedback and were performing well, there were probably other business decisions that prompted the promotion decision. I would also tell them that if they aren’t getting any real information or feedback they might be better off in an environment where there is more transparency.",
+    placeholder: "I would probably tell them to setup a meeting with their manager to ask more questions to better understand the situation. I would also tell them that there were other business decisions that prompted the promotion decision.",
     set: 5,
     phase: 2
   },

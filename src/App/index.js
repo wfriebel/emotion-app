@@ -15,7 +15,7 @@ const SCENES_COUNT = 14;
 const feelingPickerTitle = 'Here are some emotions. Select up to 3 that describe what you are feeling.';
 
 const INITIAL_STATE = {
-  scene: 1,
+  scene: 14,
   phase: 1,
   feelings: FEELINGS,
   questions: QUESTIONS
@@ -231,6 +231,7 @@ class App extends Component {
               scene={scene}
               navigatePage={this.navigatePage}
               onlyBack={scene === SCENES_COUNT || scene === SCENES_COUNT - 1}
+              lastScene={scene === SCENES_COUNT}
             />
           )
         }
