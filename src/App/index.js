@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles.scss';
-import { POPULATED_QUESTIONS } from './resources/questions';
+import { QUESTIONS } from './resources/questions';
 import { FEELINGS } from './resources/feelings';
 import { selectQuestions } from './selectors';
 import FeelingPicker from './components/FeelingPicker';
@@ -15,10 +15,10 @@ const SCENES_COUNT = 14;
 const feelingPickerTitle = 'Here are some emotions. Select up to 3 that describe what you are feeling.';
 
 const INITIAL_STATE = {
-  scene: 14,
+  scene: 1,
   phase: 1,
   feelings: FEELINGS,
-  questions: POPULATED_QUESTIONS
+  questions: QUESTIONS
 }
 
 class App extends Component {
