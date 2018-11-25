@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './styles.scss';
+import tapOrClick from 'react-tap-or-click';
 
 export default class Button extends Component {
   handleClick = e => {
@@ -7,7 +8,7 @@ export default class Button extends Component {
   }
 
   handleTouch = e => {
-    if (e.touches.length > 1) {
+    if (e.touches && e.touches.length > 1) {
       return;
     }
     this.props.navigatePage(this.props.direction)
@@ -19,7 +20,7 @@ export default class Button extends Component {
       <div className="NavButton">
         <button
           className="NavButton__button"
-          onClick={this.handleClick}
+          {...tapOrClick(this.handleTouch)}
         >
           <i className="material-icons NavButton__arrow-image">{direction === 'forwards' ? 'chevron_right' : 'chevron_left'}</i>
         </button>

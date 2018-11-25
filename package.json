@@ -8,7 +8,8 @@
     "random-uuid-v4": "^0.0.8",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "react-tap-or-click": "^0.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
