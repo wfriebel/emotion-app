@@ -10,6 +10,7 @@ export default class FinishedPage extends Component {
         <NextPageButton
           navigatePage={this.props.navigatePage}
           buttonText="See summary"
+          color="#ffc776"
         />
       </div>
     )

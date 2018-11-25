@@ -7,9 +7,10 @@ export default class NextPageButton extends Component {
   }
 
   render() {
+    const { color } = this.props;
     return (
-      <div className="NextPageButton">
-        <button className="NextPageButton__button" onClick={this.handleClick}>{this.props.buttonText}</button>
+      <div style={color ? { backgroundColor: color } : {}} className="NextPageButton">
+        <button style={color ? { backgroundColor: color } : {}} className="NextPageButton__button" onClick={this.handleClick}>{this.props.buttonText}</button>
       </div>
     )
   }
