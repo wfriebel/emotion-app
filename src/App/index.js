@@ -201,8 +201,10 @@ class App extends Component {
 
   render() {
     const scene = this.state.scene;
+    const windowHeight = window.innerHeight;
+    const bodyHeight = document.body.clientHeight;
     return (
-      <div className={`App phase-${this.state.phase}`}>
+      <div className={`App phase-${this.state.phase} ${bodyHeight > windowHeight ? 'safari' : ''}`}>
         {this.renderContent(scene)}
         {
           this.state.scene !== 1 && (
