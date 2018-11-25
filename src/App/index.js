@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles.scss';
-import { QUESTIONS } from './resources/questions';
+import { POPULATED_QUESTIONS } from './resources/questions';
 import { FEELINGS } from './resources/feelings';
 import { selectQuestions } from './selectors';
 import FeelingPicker from './components/FeelingPicker';
@@ -18,7 +18,7 @@ const INITIAL_STATE = {
   scene: 14,
   phase: 1,
   feelings: FEELINGS,
-  questions: QUESTIONS
+  questions: POPULATED_QUESTIONS
 }
 
 class App extends Component {
