@@ -16,11 +16,15 @@ export default class SceneNav extends Component {
           direction="backwards"
           navigatePage={navigatePage}
         />
-        <NavButton
-          scene={scene}
-          direction="forwards"
-          navigatePage={navigatePage}
-        />
+        {
+          !this.props.onlyBack && (
+            <NavButton
+              scene={scene}
+              direction="forwards"
+              navigatePage={navigatePage}
+            />
+          )
+        }
       </div>
     )
   }

@@ -6,6 +6,13 @@ export default class Button extends Component {
     this.props.navigatePage(this.props.direction)
   }
 
+  handleTouch = e => {
+    if (e.touches.length > 1) {
+      return;
+    }
+    this.props.navigatePage(this.props.direction)
+  }
+
   render() {
   const direction = this.props.direction;
     return (

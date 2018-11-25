@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 import './styles.scss';
 import { QUESTIONS } from './resources/questions';
-import { GENERAL_FEELINGS } from './resources/feelings';
-import { SITUATION } from './resources/situation';
+import { FEELINGS } from './resources/feelings';
 import { selectQuestions } from './selectors';
 import FeelingPicker from './components/FeelingPicker';
 import Welcome from './components/Welcome';
 import SceneNav from './components/SceneNav';
 import TextInput from './components/TextInput';
 import PhaseTitlePage from './components/PhaseTitlePage';
+import Summary from './components/Summary';
+import FinishedPage from './components/FinishedPage';
 
-const SCENES_COUNT = 12;
+const SCENES_COUNT = 14;
 const feelingPickerTitle = 'Here are some emotions. Select up to 3 that describe what you are feeling.';
 
 const INITIAL_STATE = {
   scene: 1,
   phase: 1,
-  generalFeelings: GENERAL_FEELINGS,
-  specificFeelings: [],
-  situation: SITUATION,
-  rootCauses: [],
+  feelings: FEELINGS,
   questions: QUESTIONS
 }
 
@@ -29,7 +27,7 @@ class App extends Component {
 
   toggleSelectedFeeling = (feelingId) => {
     this.setState(prevState => ({
-      generalFeelings: prevState.generalFeelings.map(feeling => {
+      feelings: prevState.feelings.map(feeling => {
         if (feeling.id === feelingId) {
           return {
             ...feeling,
@@ -40,35 +38,6 @@ class App extends Component {
         }
       })
     }))
-  }
-  
-  setStateProperty = (propertyName, value) => {
-    if (this.state.hasOwnProperty(propertyName)) {
-      this.setState(() => ({
-        [propertyName]: value
-      }))
-    } else {
-      throw new Error(`${propertyName} is not a property of this.state`);
-    }
-  }
-  
-  updateQuestionSet = (setName, questionId, value) => {
-    if (this.state.hasOwnProperty(setName)) {
-      this.setState(prevState => ({
-        [setName]: prevState[setName].map(question => {
-          if (question.id === questionId) {
-            return {
-              ...question,
-              response: value
-            }
-          } else {
-            return question
-          }
-        })
-      }))
-    } else {
-      throw new Error(`${setName} is not a property of this.state`);
-    }
   }
   
   navigatePage = (direction) => {
@@ -141,7 +110,7 @@ class App extends Component {
       return (
         <FeelingPicker 
           title={feelingPickerTitle}
-          feelings={this.state.generalFeelings}
+          feelings={this.state.feelings}
           toggleSelectedFeeling={this.toggleSelectedFeeling}
         />
       )
@@ -226,20 +195,42 @@ class App extends Component {
         />
       )
     }
+
+    if (scene === 13) {
+      return (
+        <FinishedPage
+          navigatePage={this.navigatePage}
+        />
+      )
+    }
+
+    if (scene === 14) {
+      const { feelings, questions } = this.state;
+      return (
+        <Summary 
+          feelings={feelings.filter(feeling => feeling.selected)}
+          questions={questions}
+        />
+      )
+    }
   }
 
+  initialScreenSize = window.innerHeight;
+  
   render() {
     const scene = this.state.scene;
     const windowHeight = window.innerHeight;
     const bodyHeight = document.body.clientHeight;
+    const isKeyboard = windowHeight < this.initialScreenSize;
     return (
-      <div className={`App phase-${this.state.phase} ${bodyHeight > windowHeight ? 'safari' : ''}`}>
+      <div className={`App phase-${this.state.phase} ${bodyHeight > windowHeight && !isKeyboard ? 'safari' : ''}`}>
         {this.renderContent(scene)}
         {
-          this.state.scene !== 1 && (
+          scene !== 1 && (
             <SceneNav
               scene={scene}
               navigatePage={this.navigatePage}
+              onlyBack={scene === SCENES_COUNT || scene === SCENES_COUNT - 1}
             />
           )
         }

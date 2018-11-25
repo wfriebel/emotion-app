@@ -1,6 +1,6 @@
-@import '../../../../../styleConstants.scss';
+@import '../../../styleConstants.scss';
 
-.GetStartedButton {
+.NextPageButton {
   width: 50%;
   height: 4rem;
   font-size: 1.5rem;
@@ -10,9 +10,10 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  box-shadow:  0px 8px 19px -8px rgba(0,0,0,0.50);
 }
 
-.GetStartedButton__button {
+.NextPageButton__button {
   color: $button-grey;
   width: 100%;
   height: 100%;

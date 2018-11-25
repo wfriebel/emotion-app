@@ -1,0 +1,22 @@
+@import '../../../styleConstants.scss';
+
+.Summary {
+  width: 90%;
+  padding: 0 5%;
+  height: $scene-height;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.Summary__subtitle {
+  margin: 1rem 0;
+}
+
+.Summary_paragraph {
+  width: 90%;
+  margin: 0;
+  margin-bottom: 1rem;
+}

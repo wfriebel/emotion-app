@@ -1,6 +1,6 @@
 import uuid from 'random-uuid-v4';
 
-export const GENERAL_FEELINGS = [
+export const FEELINGS = [
   {
     id: uuid(),
     feeling: 'confused',

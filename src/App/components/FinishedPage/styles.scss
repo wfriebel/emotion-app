@@ -1,6 +1,6 @@
 @import '../../../styleConstants.scss';
 
-.PhaseTitlePage {
+.FinishedPage {
   width: $scene-width;
   height: $scene-height;
   display: flex;
@@ -10,16 +10,9 @@
   color: $light-grey;
 }
 
-.PhaseTitlePage__title {
+.FinishedPage__title {
   margin: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-weight: normal;
   font-size: 4rem;
-}
-
-.PhaseTitlePage__subtitle {
-  margin: 0;
-  margin-bottom: 5rem;
-  font-weight: normal;
-  font-size: 2rem;
 }
