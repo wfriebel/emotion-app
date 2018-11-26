@@ -1,3 +1,5 @@
+![alt text](https://i.imgur.com/FyLIFAu.png "Logo Title Text 1")
+
 # Keepin’ it Feel
 
 We are often pretty good at knowing what we are feeling and why. We can tie emotions to specific situations, i.e. I have the day off so I am happy. But often, it can be hard to either a) identify our emotions or b) understand why we are feeling a certain emotion. Keepin’ it Feel was created to help individuals gain self-awareness in these types of situations. It is a mindfulness exercise of sorts, to bring you into the present to identify the situation, triggers and actions that led you to feel a certain way. We don’t offer advice or claim to be therapists. Instead, we hope that the process of reflecting will help you get better at understanding the reasons behind your emotions and help you get faster at identifying why you are feeling what you are feeling.
