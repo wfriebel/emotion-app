@@ -26,6 +26,10 @@ class App extends Component {
   state = INITIAL_STATE;
 
   componentDidMount() {
+    // Check to see if the browser is safari. From what I can tell, 100vh in Safari puts the bottom of the
+    // content 10vh below the visible screen. Here, I check to see if this is the case, then adjust the height
+    // of the body to 90vh and set this to the state as isSafari. Lower in this file I use this value to scale
+    // App to 90vh if the browser is Safari.
     const windowHeight = window.innerHeight;
     const bodyHeight = document.body.clientHeight;
     const isSafari = bodyHeight > windowHeight;
