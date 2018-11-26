@@ -1,4 +1,4 @@
-![alt text](https://i.imgur.com/FyLIFAu.png "Logo Title Text 1")
+![alt text](https://i.imgur.com/trkivKr.png "Keepin' it Feel")
 
 # Keepin’ it Feel
 
